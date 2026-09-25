@@ -1,283 +1,612 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gram Panchayat Masoodi | Development Works</title>
+<title>ग्राम पंचायत मसूड़ी | आधिकारिक वेबसाइट</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f7f5;
-    color: #173b2b;
+body{
+    font-family:"Nirmala UI","Mangal",Arial,sans-serif;
+    background:#fffdf5;
+    color:#333;
+    line-height:1.7;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#fff;
+    border-bottom:1px solid #eee;
+    padding:8px 6%;
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+}
+
+.topbar span{
+    color:#666;
 }
 
 /* HEADER */
-header {
-    background: linear-gradient(135deg, #075e3d, #15905b);
-    color: white;
-    padding: 22px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+header{
+    background:linear-gradient(135deg,#fff7c2,#fff);
+    padding:20px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
 }
 
-.logo {
-    font-size: 23px;
-    font-weight: bold;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
-.logo span {
-    display: block;
-    font-size: 13px;
-    font-weight: normal;
-    margin-top: 4px;
+.logo-icon{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#f5c400;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:32px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 22px;
-    font-weight: bold;
+.logo h1{
+    color:#765600;
+    font-size:25px;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.logo p{
+    color:#777;
+    font-size:13px;
+}
+
+nav{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#444;
+    padding:9px 13px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#f5c400;
+    color:#fff;
 }
 
 /* HERO */
-.hero {
-    min-height: 500px;
-    background: linear-gradient(135deg, #075e3d, #21a366);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 70px 20px;
+.hero{
+    min-height:500px;
+    padding:80px 8%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    background:
+    linear-gradient(120deg,rgba(255,221,70,.92),rgba(255,255,255,.95));
 }
 
-.hero-content {
-    max-width: 850px;
+.hero-text{
+    max-width:700px;
 }
 
-.hero h1 {
-    font-size: 55px;
-    margin-bottom: 18px;
+.badge{
+    display:inline-block;
+    background:#fff;
+    color:#8a6800;
+    padding:7px 15px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
-.hero p {
-    font-size: 20px;
-    line-height: 1.7;
+.hero h2{
+    font-size:48px;
+    line-height:1.2;
+    color:#654d00;
+    margin-bottom:18px;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 28px;
-    padding: 14px 28px;
-    background: white;
-    color: #075e3d;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
+.hero p{
+    font-size:19px;
+    color:#555;
+    margin-bottom:25px;
 }
 
-.button:hover {
-    transform: scale(1.05);
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#d9aa00;
+    color:#fff;
+    padding:12px 22px;
+    border-radius:9px;
+    font-weight:bold;
+    margin-right:8px;
+    transition:.3s;
+    box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#b98f00;
+}
+
+.btn.white{
+    background:#fff;
+    color:#806000;
+}
+
+/* HERO CARD */
+.hero-card{
+    width:330px;
+    background:#fff;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+}
+
+.hero-card .big-icon{
+    font-size:75px;
+    margin-bottom:10px;
+}
+
+.hero-card h3{
+    color:#765600;
 }
 
 /* SECTIONS */
-section {
-    padding: 70px 7%;
+section{
+    padding:70px 7%;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 34px;
-    margin-bottom: 45px;
-    color: #075e3d;
+.section-title{
+    text-align:center;
+    font-size:34px;
+    color:#715400;
+    margin-bottom:10px;
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#777;
+    max-width:750px;
+    margin:0 auto 40px;
 }
 
 /* STATS */
-.stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+.stats{
+    background:#fff;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-.stat {
-    background: white;
-    padding: 30px;
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+.stat{
+    padding:28px;
+    text-align:center;
+    background:#fffbea;
+    border:1px solid #f4df83;
+    border-radius:18px;
+    transition:.3s;
 }
 
-.stat h3 {
-    font-size: 38px;
-    color: #15905b;
-    margin-bottom: 8px;
+.stat:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
 
-/* PROJECTS */
-.projects {
-    background: #eaf5ef;
+.stat .number{
+    font-size:36px;
+    font-weight:bold;
+    color:#d09f00;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-.photo {
-    height: 190px;
-    background: linear-gradient(135deg, #8fd3b3, #dff5e9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 55px;
-}
-
-.card-content {
-    padding: 22px;
-}
-
-.card h3 {
-    color: #075e3d;
-    margin-bottom: 10px;
-    font-size: 22px;
-}
-
-.card p {
-    line-height: 1.6;
-    color: #555;
-}
-
-.status {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 7px 13px;
-    background: #d9f5e5;
-    color: #087443;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: bold;
+.stat p{
+    color:#666;
 }
 
 /* ABOUT */
-.about {
-    background: white;
+.about{
+    background:#fffdf5;
 }
 
-.about-box {
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-    line-height: 1.8;
-    font-size: 18px;
+.about-box{
+    max-width:1000px;
+    margin:auto;
+    background:#fff;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 8px 30px rgba(0,0,0,.07);
+    border-left:6px solid #e2b600;
+}
+
+.about-box p{
+    margin-bottom:15px;
+}
+
+/* E-KAKSH */
+.ekaksh{
+    background:linear-gradient(135deg,#fff8c9,#fff);
+}
+
+.ekaksh-box{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+    align-items:center;
+}
+
+.ekaksh-image{
+    min-height:300px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#f6ce28,#fff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:100px;
+    box-shadow:0 12px 30px rgba(0,0,0,.1);
+}
+
+.ekaksh-content h3{
+    font-size:30px;
+    color:#705300;
+    margin-bottom:15px;
+}
+
+.ekaksh-content ul{
+    list-style:none;
+}
+
+.ekaksh-content li{
+    padding:9px 0;
+    border-bottom:1px solid #eee;
+}
+
+/* PEOPLE */
+.people{
+    background:#fff;
+}
+
+.people-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    max-width:900px;
+    margin:auto;
+}
+
+.person{
+    background:#fffdf1;
+    border:1px solid #efd979;
+    border-radius:20px;
+    padding:30px;
+    display:flex;
+    gap:25px;
+    align-items:center;
+    box-shadow:0 7px 20px rgba(0,0,0,.06);
+    transition:.3s;
+}
+
+.person:hover{
+    transform:translateY(-5px);
+}
+
+.person-photo{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:#ffe36b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+    flex-shrink:0;
+    overflow:hidden;
+}
+
+.person-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.person h3{
+    color:#765600;
+    margin-bottom:5px;
+}
+
+.person .role{
+    color:#b08400;
+    font-weight:bold;
 }
 
 /* FACILITIES */
-.facilities {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+.facilities{
+    background:#fffbea;
 }
 
-.facility {
-    background: #f1f8f4;
-    padding: 30px 20px;
-    text-align: center;
-    border-radius: 15px;
+.facility-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
 }
 
-.facility .icon {
-    font-size: 45px;
-    margin-bottom: 15px;
+.facility{
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    text-align:center;
+    border:1px solid #f0df98;
+    transition:.3s;
 }
 
-.facility h3 {
-    margin-bottom: 8px;
+.facility:hover{
+    transform:translateY(-7px);
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+.facility .icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.facility h3{
+    color:#735500;
+    margin-bottom:8px;
+}
+
+/* DEVELOPMENT */
+.development{
+    background:#fff;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project{
+    background:#fffdf4;
+    border:1px solid #efd878;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-7px);
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.project-photo{
+    height:190px;
+    background:linear-gradient(135deg,#f6ce27,#fff3a7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:65px;
+}
+
+.project-content{
+    padding:22px;
+}
+
+.project-content h3{
+    color:#705200;
+    margin-bottom:7px;
+}
+
+.project-content p{
+    color:#666;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:12px;
+    background:#f8dc55;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* SCHEMES */
+.schemes{
+    background:#fffbea;
+}
+
+.scheme-list{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.scheme{
+    background:#fff;
+    padding:20px;
+    border-radius:12px;
+    border-left:5px solid #e4b800;
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+.scheme h3{
+    color:#725500;
+}
+
+/* NOTICE */
+.notice{
+    background:#fff;
+}
+
+.notice-box{
+    max-width:1000px;
+    margin:auto;
+    background:#fff9d9;
+    border:1px solid #efd86b;
+    border-radius:18px;
+    padding:25px;
+}
+
+.notice-item{
+    padding:14px;
+    border-bottom:1px solid #eadb91;
+}
+
+.notice-item:last-child{
+    border-bottom:none;
 }
 
 /* CONTACT */
-.contact {
-    background: #075e3d;
-    color: white;
-    text-align: center;
+.contact{
+    background:linear-gradient(135deg,#fff4a7,#fff);
 }
 
-.contact .section-title {
-    color: white;
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    max-width:1000px;
+    margin:auto;
 }
 
-.contact p {
-    margin: 12px;
-    font-size: 18px;
+.contact-card{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.contact-card h3{
+    color:#735500;
+    margin-bottom:15px;
+}
+
+.contact-line{
+    padding:10px 0;
+    border-bottom:1px solid #eee;
 }
 
 /* FOOTER */
-footer {
-    background: #063d29;
-    color: white;
-    text-align: center;
-    padding: 25px;
+footer{
+    background:#4c3a00;
+    color:#fff;
+    padding:45px 7% 20px;
 }
 
-footer p {
-    margin: 5px;
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:30px;
+}
+
+footer h3{
+    color:#ffe36b;
+    margin-bottom:12px;
+}
+
+footer a{
+    color:#fff;
+    text-decoration:none;
+    display:block;
+    margin:5px 0;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid rgba(255,255,255,.2);
+    padding-top:20px;
+    color:#ddd;
 }
 
 /* MOBILE */
-@media (max-width: 850px) {
-
-    header {
-        flex-direction: column;
-        gap: 15px;
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
     }
 
-    nav a {
-        margin: 0 7px;
-        font-size: 14px;
+    .hero h2{
+        font-size:38px;
     }
 
-    .hero h1 {
-        font-size: 38px;
+    .stats{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .facility-grid,
+    .project-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .ekaksh-box,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+    header{
+        flex-direction:column;
+    }
+
+    nav{
+        justify-content:center;
     }
 
     .stats,
+    .facility-grid,
     .project-grid,
-    .facilities {
-        grid-template-columns: 1fr;
+    .people-grid,
+    .scheme-list{
+        grid-template-columns:1fr;
     }
 
-    section {
-        padding: 50px 5%;
+    .person{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:60px 5%;
+    }
+
+    section{
+        padding:55px 5%;
     }
 }
 </style>
@@ -285,180 +614,95 @@ footer p {
 
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+    <span>🇮🇳 ग्राम पंचायत मसूड़ी</span>
+    <span>जनसेवा • विकास • पारदर्शिता</span>
+</div>
+
+<!-- HEADER -->
 <header>
+
     <div class="logo">
-        🏛️ Gram Panchayat Masoodi
-        <span>Development & Public Services</span>
+        <div class="logo-icon">🏛️</div>
+
+        <div>
+            <h1>ग्राम पंचायत मसूड़ी</h1>
+            <p>आधिकारिक विकास एवं जनसेवा पोर्टल</p>
+        </div>
     </div>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#facilities">Facilities</a>
-        <a href="#contact">Contact</a>
+        <a href="#home">होम</a>
+        <a href="#about">पंचायत</a>
+        <a href="#ekaksh">ई-कक्ष</a>
+        <a href="#people">कर्मचारी</a>
+        <a href="#development">विकास कार्य</a>
+        <a href="#facilities">सुविधाएँ</a>
+        <a href="#schemes">योजनाएँ</a>
+        <a href="#contact">संपर्क</a>
     </nav>
+
 </header>
 
 
 <!-- HERO -->
 <section class="hero" id="home">
-    <div class="hero-content">
 
-        <h1>Gram Panchayat Masoodi</h1>
+    <div class="hero-text">
 
-        <p>
-            Welcome to the official development information website
-            of Gram Panchayat Masoodi.
-        </p>
+        <span class="badge">🌿 स्वागत है</span>
+
+        <h2>ग्राम पंचायत मसूड़ी में आपका स्वागत है</h2>
 
         <p>
-            Explore development works, public facilities and
-            important information about our village.
+            यह वेबसाइट ग्राम पंचायत के विकास कार्यों,
+            जनसुविधाओं, योजनाओं, कर्मचारियों तथा
+            महत्वपूर्ण जानकारी को नागरिकों तक पहुँचाने के लिए बनाई गई है।
         </p>
 
-        <a href="#projects" class="button">
-            Explore Development Works ↓
-        </a>
+        <a class="btn" href="#development">विकास कार्य देखें</a>
+        <a class="btn white" href="#contact">संपर्क जानकारी</a>
 
     </div>
-</section>
 
+    <div class="hero-card">
 
-<!-- STATISTICS -->
-<section>
+        <div class="big-icon">🏘️</div>
 
-    <h2 class="section-title">Development at a Glance</h2>
+        <h3>हमारा गाँव • हमारा विकास</h3>
 
-    <div class="stats">
-
-        <div class="stat">
-            <h3>06+</h3>
-            <p>Development Projects</p>
-        </div>
-
-        <div class="stat">
-            <h3>04+</h3>
-            <p>Public Facilities</p>
-        </div>
-
-        <div class="stat">
-            <h3>2026</h3>
-            <p>Development Year</p>
-        </div>
-
-        <div class="stat">
-            <h3>100%</h3>
-            <p>Community Focus</p>
-        </div>
+        <p>
+            स्वच्छ, सुरक्षित, शिक्षित और विकसित ग्राम
+            बनाने की दिशा में निरंतर प्रयास।
+        </p>
 
     </div>
 
 </section>
 
 
-<!-- PROJECTS -->
-<section class="projects" id="projects">
+<!-- STATS -->
+<section class="stats">
 
-    <h2 class="section-title">Development Works</h2>
+    <div class="stat">
+        <div class="number">01</div>
+        <p>ग्राम पंचायत</p>
+    </div>
 
-    <div class="project-grid">
+    <div class="stat">
+        <div class="number">∞</div>
+        <p>जनसेवा का लक्ष्य</p>
+    </div>
 
-        <div class="card">
-            <div class="photo">🛣️</div>
+    <div class="stat">
+        <div class="number">2026</div>
+        <p>वेबसाइट वर्ष</p>
+    </div>
 
-            <div class="card-content">
-                <h3>Road Development</h3>
-
-                <p>
-                    Improvement and development of village roads
-                    to provide safer and easier transportation.
-                </p>
-
-                <span class="status">Completed / Ongoing</span>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="photo">💧</div>
-
-            <div class="card-content">
-                <h3>Water Facility</h3>
-
-                <p>
-                    Development and improvement of water facilities
-                    for the local community.
-                </p>
-
-                <span class="status">Development Work</span>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="photo">💡</div>
-
-            <div class="card-content">
-                <h3>Street Lighting</h3>
-
-                <p>
-                    Installation and improvement of street lighting
-                    in important areas of the village.
-                </p>
-
-                <span class="status">Development Work</span>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="photo">🏫</div>
-
-            <div class="card-content">
-                <h3>Education Facilities</h3>
-
-                <p>
-                    Development and improvement of facilities
-                    supporting education in the village.
-                </p>
-
-                <span class="status">Community Work</span>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="photo">🏘️</div>
-
-            <div class="card-content">
-                <h3>Community Development</h3>
-
-                <p>
-                    Development activities designed to improve
-                    facilities and services for residents.
-                </p>
-
-                <span class="status">Community Work</span>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="photo">🌳</div>
-
-            <div class="card-content">
-                <h3>Clean & Green Village</h3>
-
-                <p>
-                    Activities supporting cleanliness, greenery
-                    and a healthier village environment.
-                </p>
-
-                <span class="status">Community Initiative</span>
-            </div>
-        </div>
-
+    <div class="stat">
+        <div class="number">100%</div>
+        <p>पारदर्शिता का प्रयास</p>
     </div>
 
 </section>
@@ -467,22 +711,28 @@ footer p {
 <!-- ABOUT -->
 <section class="about" id="about">
 
-    <h2 class="section-title">About Gram Panchayat Masoodi</h2>
+    <h2 class="section-title">हमारी ग्राम पंचायत</h2>
+
+    <p class="section-subtitle">
+        ग्राम पंचायत मसूड़ी के बारे में महत्वपूर्ण जानकारी
+    </p>
 
     <div class="about-box">
 
         <p>
-            Gram Panchayat Masoodi works towards the development
-            of village infrastructure, public facilities and
-            community services.
+            <strong>ग्राम पंचायत मसूड़ी</strong> ग्रामीण क्षेत्र के
+            विकास एवं जनसेवा के लिए कार्य करने वाली स्थानीय संस्था है।
         </p>
 
-        <br>
+        <p>
+            पंचायत द्वारा सड़क, पानी, स्वच्छता, शिक्षा,
+            प्रकाश व्यवस्था, सार्वजनिक सुविधाओं तथा अन्य
+            विकास कार्यों से संबंधित गतिविधियों पर ध्यान दिया जाता है।
+        </p>
 
         <p>
-            This website provides information about development
-            works and public facilities available in the
-            Gram Panchayat area.
+            इस वेबसाइट का उद्देश्य पंचायत से जुड़ी महत्वपूर्ण
+            जानकारी को सरल और सुविधाजनक रूप में नागरिकों तक पहुँचाना है।
         </p>
 
     </div>
@@ -490,35 +740,339 @@ footer p {
 </section>
 
 
+<!-- E-KAKSH -->
+<section class="ekaksh" id="ekaksh">
+
+    <h2 class="section-title">💻 ई-कक्ष</h2>
+
+    <p class="section-subtitle">
+        डिजिटल जानकारी एवं ऑनलाइन सुविधाओं के लिए पंचायत का ई-कक्ष
+    </p>
+
+    <div class="ekaksh-box">
+
+        <div class="ekaksh-image">
+            💻
+        </div>
+
+        <div class="ekaksh-content">
+
+            <h3>ग्राम पंचायत ई-कक्ष</h3>
+
+            <p>
+                ई-कक्ष के माध्यम से ग्रामीण नागरिकों को
+                डिजिटल जानकारी और विभिन्न सेवाओं के बारे में
+                जानकारी उपलब्ध कराई जा सकती है।
+            </p>
+
+            <br>
+
+            <ul>
+                <li>📄 पंचायत संबंधी दस्तावेज़</li>
+                <li>📢 महत्वपूर्ण सूचनाएँ</li>
+                <li>🏛️ सरकारी योजनाओं की जानकारी</li>
+                <li>💻 डिजिटल सेवाओं की जानकारी</li>
+                <li>📚 शिक्षा एवं डिजिटल साक्षरता</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EMPLOYEES -->
+<section class="people" id="people">
+
+    <h2 class="section-title">👨‍💼 पंचायत कर्मचारी</h2>
+
+    <p class="section-subtitle">
+        पंचायत के महत्वपूर्ण कर्मचारियों की जानकारी
+    </p>
+
+    <div class="people-grid">
+
+        <div class="person">
+
+            <div class="person-photo">
+                📷
+            </div>
+
+            <div>
+                <h3>नाम यहाँ जोड़ें</h3>
+                <div class="role">सहायक सचिव</div>
+                <p>ग्राम पंचायत मसूड़ी</p>
+            </div>
+
+        </div>
+
+
+        <div class="person">
+
+            <div class="person-photo">
+                📷
+            </div>
+
+            <div>
+                <h3>नाम यहाँ जोड़ें</h3>
+                <div class="role">रोजगार सहायक</div>
+                <p>ग्राम पंचायत मसूड़ी</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
 <!-- FACILITIES -->
-<section id="facilities">
+<section class="facilities" id="facilities">
 
-    <h2 class="section-title">Village Facilities</h2>
+    <h2 class="section-title">🏘️ ग्राम की प्रमुख सुविधाएँ</h2>
 
-    <div class="facilities">
+    <p class="section-subtitle">
+        नागरिकों के लिए उपलब्ध एवं विकसित की जा रही प्रमुख सुविधाएँ
+    </p>
+
+    <div class="facility-grid">
 
         <div class="facility">
-            <div class="icon">💧</div>
-            <h3>Water</h3>
-            <p>Public water facilities</p>
+            <div class="icon">🚰</div>
+            <h3>जल सुविधा</h3>
+            <p>स्वच्छ पेयजल एवं जल सुविधा से संबंधित जानकारी।</p>
         </div>
 
         <div class="facility">
             <div class="icon">🛣️</div>
-            <h3>Roads</h3>
-            <p>Village transportation</p>
+            <h3>सड़क व्यवस्था</h3>
+            <p>गाँव की सड़कों एवं विकास कार्यों की जानकारी।</p>
         </div>
 
         <div class="facility">
             <div class="icon">💡</div>
-            <h3>Lighting</h3>
-            <p>Street lighting facilities</p>
+            <h3>प्रकाश व्यवस्था</h3>
+            <p>सड़क एवं सार्वजनिक स्थानों पर प्रकाश व्यवस्था।</p>
         </div>
 
         <div class="facility">
             <div class="icon">🏫</div>
-            <h3>Education</h3>
-            <p>Educational facilities</p>
+            <h3>शिक्षा</h3>
+            <p>शिक्षा एवं विद्यालय संबंधी महत्वपूर्ण जानकारी।</p>
+        </div>
+
+        <div class="facility">
+            <div class="icon">🧹</div>
+            <h3>स्वच्छता</h3>
+            <p>स्वच्छता एवं साफ-सफाई से संबंधित गतिविधियाँ।</p>
+        </div>
+
+        <div class="facility">
+            <div class="icon">🌳</div>
+            <h3>पर्यावरण</h3>
+            <p>हरियाली एवं पर्यावरण संरक्षण की दिशा में प्रयास।</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DEVELOPMENT -->
+<section class="development" id="development">
+
+    <h2 class="section-title">🏗️ विकास कार्य</h2>
+
+    <p class="section-subtitle">
+        ग्राम पंचायत में किए गए एवं प्रस्तावित विकास कार्य
+    </p>
+
+    <div class="project-grid">
+
+        <div class="project">
+
+            <div class="project-photo">
+                🛣️
+            </div>
+
+            <div class="project-content">
+                <h3>सड़क विकास</h3>
+                <p>
+                    ग्राम क्षेत्र में सड़क निर्माण एवं सुधार से
+                    संबंधित कार्य।
+                </p>
+                <span class="tag">विकास कार्य</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-photo">
+                🚰
+            </div>
+
+            <div class="project-content">
+                <h3>जल व्यवस्था</h3>
+                <p>
+                    नागरिकों के लिए जल सुविधा को बेहतर बनाने
+                    से संबंधित कार्य।
+                </p>
+                <span class="tag">जनसुविधा</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-photo">
+                💡
+            </div>
+
+            <div class="project-content">
+                <h3>स्ट्रीट लाइट</h3>
+                <p>
+                    सार्वजनिक स्थानों एवं मार्गों पर प्रकाश
+                    व्यवस्था से संबंधित कार्य।
+                </p>
+                <span class="tag">सुविधा</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-photo">
+                🏫
+            </div>
+
+            <div class="project-content">
+                <h3>शिक्षा संबंधी कार्य</h3>
+                <p>
+                    शिक्षा एवं विद्यालय से संबंधित विकास
+                    गतिविधियाँ।
+                </p>
+                <span class="tag">शिक्षा</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-photo">
+                🧹
+            </div>
+
+            <div class="project-content">
+                <h3>स्वच्छता कार्य</h3>
+                <p>
+                    स्वच्छ एवं स्वस्थ ग्राम के लिए स्वच्छता
+                    संबंधी गतिविधियाँ।
+                </p>
+                <span class="tag">स्वच्छता</span>
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-photo">
+                🌳
+            </div>
+
+            <div class="project-content">
+                <h3>हरियाली एवं पर्यावरण</h3>
+                <p>
+                    पौधारोपण एवं पर्यावरण संरक्षण से संबंधित
+                    गतिविधियाँ।
+                </p>
+                <span class="tag">पर्यावरण</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GOVERNMENT SCHEMES -->
+<section class="schemes" id="schemes">
+
+    <h2 class="section-title">📋 सरकारी योजनाएँ</h2>
+
+    <p class="section-subtitle">
+        ग्रामीण नागरिकों के लिए उपयोगी सरकारी योजनाओं की जानकारी
+    </p>
+
+    <div class="scheme-list">
+
+        <div class="scheme">
+            <h3>🏠 प्रधानमंत्री आवास योजना</h3>
+            <p>आवास से संबंधित सरकारी योजना की जानकारी यहाँ दी जा सकती है।</p>
+        </div>
+
+        <div class="scheme">
+            <h3>💧 जल जीवन मिशन</h3>
+            <p>पेयजल एवं नल कनेक्शन से संबंधित जानकारी।</p>
+        </div>
+
+        <div class="scheme">
+            <h3>🌾 मनरेगा</h3>
+            <p>ग्रामीण रोजगार से संबंधित योजना एवं जानकारी।</p>
+        </div>
+
+        <div class="scheme">
+            <h3>🧹 स्वच्छ भारत मिशन</h3>
+            <p>स्वच्छता एवं स्वच्छ ग्राम से संबंधित जानकारी।</p>
+        </div>
+
+        <div class="scheme">
+            <h3>🌱 कृषि योजनाएँ</h3>
+            <p>किसानों के लिए उपयोगी योजनाओं की जानकारी।</p>
+        </div>
+
+        <div class="scheme">
+            <h3>👩 महिला एवं बाल विकास</h3>
+            <p>महिलाओं एवं बच्चों से संबंधित योजनाओं की जानकारी।</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NOTICE -->
+<section class="notice">
+
+    <h2 class="section-title">📢 महत्वपूर्ण सूचनाएँ</h2>
+
+    <p class="section-subtitle">
+        पंचायत की महत्वपूर्ण घोषणाएँ एवं सूचनाएँ
+    </p>
+
+    <div class="notice-box">
+
+        <div class="notice-item">
+            📌 पंचायत की महत्वपूर्ण सूचना यहाँ प्रदर्शित की जा सकती है।
+        </div>
+
+        <div class="notice-item">
+            📌 विकास कार्यों से संबंधित नई जानकारी यहाँ जोड़ी जा सकती है।
+        </div>
+
+        <div class="notice-item">
+            📌 ग्राम सभा की बैठक संबंधी सूचना यहाँ प्रकाशित की जा सकती है।
+        </div>
+
+        <div class="notice-item">
+            📌 नागरिकों के लिए आवश्यक घोषणा यहाँ दी जा सकती है।
         </div>
 
     </div>
@@ -529,15 +1083,60 @@ footer p {
 <!-- CONTACT -->
 <section class="contact" id="contact">
 
-    <h2 class="section-title">Contact Gram Panchayat</h2>
+    <h2 class="section-title">📞 संपर्क करें</h2>
 
-    <p>🏛️ Gram Panchayat Masoodi</p>
+    <p class="section-subtitle">
+        ग्राम पंचायत मसूड़ी से संबंधित जानकारी के लिए संपर्क विवरण
+    </p>
 
-    <p>📍 Village: Masoodi</p>
+    <div class="contact-grid">
 
-    <p>📧 Email: Add official email here</p>
+        <div class="contact-card">
 
-    <p>📞 Phone: Add official contact number here</p>
+            <h3>🏛️ पंचायत कार्यालय</h3>
+
+            <div class="contact-line">
+                📍 ग्राम पंचायत मसूड़ी
+            </div>
+
+            <div class="contact-line">
+                📍 जिला: यहाँ जानकारी जोड़ें
+            </div>
+
+            <div class="contact-line">
+                📍 विकासखंड: यहाँ जानकारी जोड़ें
+            </div>
+
+            <div class="contact-line">
+                📍 मध्य प्रदेश
+            </div>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <h3>📱 संपर्क जानकारी</h3>
+
+            <div class="contact-line">
+                ☎️ फोन: यहाँ नंबर जोड़ें
+            </div>
+
+            <div class="contact-line">
+                📧 ई-मेल: यहाँ ई-मेल जोड़ें
+            </div>
+
+            <div class="contact-line">
+                🕘 कार्यालय समय: यहाँ समय जोड़ें
+            </div>
+
+            <div class="contact-line">
+                💻 ई-कक्ष: उपलब्ध
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -545,9 +1144,39 @@ footer p {
 <!-- FOOTER -->
 <footer>
 
-    <p>© 2026 Gram Panchayat Masoodi</p>
+    <div class="footer-grid">
 
-    <p>Development & Public Services</p>
+        <div>
+            <h3>ग्राम पंचायत मसूड़ी</h3>
+
+            <p>
+                जनसेवा, विकास और पारदर्शिता के लिए
+                समर्पित ग्राम पंचायत।
+            </p>
+        </div>
+
+        <div>
+            <h3>त्वरित लिंक</h3>
+
+            <a href="#home">होम</a>
+            <a href="#about">पंचायत</a>
+            <a href="#ekaksh">ई-कक्ष</a>
+            <a href="#development">विकास कार्य</a>
+        </div>
+
+        <div>
+            <h3>अन्य</h3>
+
+            <a href="#facilities">सुविधाएँ</a>
+            <a href="#schemes">योजनाएँ</a>
+            <a href="#contact">संपर्क</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 ग्राम पंचायत मसूड़ी | सभी अधिकार सुरक्षित
+    </div>
 
 </footer>
 
